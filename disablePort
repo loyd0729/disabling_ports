@@ -1,0 +1,17 @@
+- name: FirewallD
+  hosts: <server-name>
+  connection: local
+  become: yes
+  tasks:
+    - name: rule1
+      firewalld:
+        permanent: yes
+        immediate: yes
+        port: 80/tcp
+        state: disabled
+     - name: rule2:
+       firewalld:
+          permanent: yes
+          immediate: yes
+          port: 443/tcp
+          state: disabled
